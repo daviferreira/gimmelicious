@@ -1,8 +1,8 @@
-require_relative "../../gimmelicious"
+require_relative '../../gimmelicious'
  
-require "Capybara"
-require "Capybara/cucumber"
-require "rspec"
+require 'capybara'
+require 'capybara/cucumber'
+require 'rspec'
  
 World do
   Capybara.app = Gimmelicious

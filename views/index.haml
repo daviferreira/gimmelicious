@@ -14,7 +14,21 @@
   %div.alert-message.block-message.success{:style => "margin-top:12px;"}
     %p Don't know how to backup your delicious bookmarks?
     %a{:href => "http://lifehacker.com/5136845/backup-delicious-bookmarks-from-the-shell", :target => "_blank"} Backup Delicious Bookmarks from the Shell
-  
+
+  -unless @unique_id.nil?
+    %p
+      %strong UUID:
+      =@unique_id
+    %div.alert-message.info
+      %p
+        You have
+        %strong
+          =@total_bookmarks
+        bookmarks under
+        %strong
+          =@tags.length
+        tags.
+
   %form.form-stacked{:method => "post", :action => "/upload", :enctype => "multipart/form-data"}
     %fieldset
       %label Locate your XML file
