@@ -15,7 +15,7 @@
     %p Don't know how to backup your delicious bookmarks?
     %a{:href => "http://lifehacker.com/5136845/backup-delicious-bookmarks-from-the-shell", :target => "_blank"} Backup Delicious Bookmarks from the Shell
   
-  %form.form-stacked
+  %form.form-stacked{:method => "post", :action => "/upload", :enctype => "multipart/form-data"}
     %fieldset
       %label Locate your XML file
       %div.field

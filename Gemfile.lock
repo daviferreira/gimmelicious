@@ -63,6 +63,7 @@ DEPENDENCIES
   curb
   haml
   json
+  nokogiri
   rspec
   shotgun
   sinatra
