@@ -39,11 +39,7 @@ class Gimmelicious < Sinatra::Base
       tags = []
       doc.xpath("//post").each do |post|
         tag = post.attributes["tag"].value.split(' ')
-        unless tag.nil? or tag.empty?
-          tag.each do |t|
-            tags.push(t) unless tags.include?(t)
-          end
-        end
+        tag.each{ |t| tags.push(t) unless tags.include?(t) }
       end
       tags
     end

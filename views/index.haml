@@ -11,17 +11,14 @@
 %div.well  
   %h2 2) Load your delicious bookmarks:
   
-  %div.alert-message.block-message.success{:style => "margin-top:12px;"}
+  %div.alert-message.block-message.notice{:style => "margin-top:12px;"}
     %p Don't know how to backup your delicious bookmarks?
     %a{:href => "http://lifehacker.com/5136845/backup-delicious-bookmarks-from-the-shell", :target => "_blank"} Backup Delicious Bookmarks from the Shell
 
   -unless @unique_id.nil?
-    %p
-      %strong UUID:
-      =@unique_id
-    %div.alert-message.info
+    %div.alert-message.block-message.success
       %p
-        You have
+        File successfully loaded. You have
         %strong
           =@total_bookmarks
         bookmarks under
@@ -39,6 +36,25 @@
 
 %div.well
   %h2 3) Select your import settings:
-  %form.form-stacked
+  %form
+    %div.clearfix
+      %label Options:
+      %div.input
+        %ul.inputs-list
+          %li
+            %label
+              %input{:type => "radio", :name => "settings", :value => 1}
+                %span 
+                  Import everything to a 
+                  %strong Delicious collection
+          %li
+            %label
+              %input{:type => "radio", :name => "settings", :value => 1}
+              %span Import everything to collections based on tags 
+          %li
+            %label
+              %input{:type => "radio", :name => "settings", :value => 1}
+              %span Import everything to an existing collection 
+
     %div.actions
       %input{:type => "submit", :class => "btn primary large disabled", :value => "Import!"}

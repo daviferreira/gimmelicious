@@ -7,5 +7,5 @@ Feature: Upload delicious xml files
     Given I am on the home page
     When I upload a file with valid data
     And I click "Upload!"
-    Then I should see "You have 8 bookmarks under 10 tags"
-    
+    Then I should see "File successfully loaded"
+    And I should see "You have 8 bookmarks under 10 tags"
