@@ -6,7 +6,7 @@
   %h2 1) Authenticate with gimmebar:
   %form.form-stacked
     %div.actions
-      %a{:href => "/gimmebar/auth", :class => "btn large success"} Sign in
+      %a{:href => "/gimmebar/auth", :class => "btn large success"} Sign in!
 
 %div.well  
   %h2 2) Load your delicious bookmarks:
@@ -19,7 +19,7 @@
     %fieldset
       %label Locate your XML file
       %div.field
-        %input{:type => "file"}
+        %input{:type => "file", :name => "bookmarks"}
       %div.actions
         %input{:type => "submit", :class => "btn info large", :value => "Upload!"}
 
