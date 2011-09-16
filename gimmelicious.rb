@@ -26,7 +26,7 @@ class Gimmelicious < Sinatra::Base
   
   post '/upload' do
     session['uuid'] = UUIDTools::UUID.timestamp_create().to_s
-    content = File.read(params[:bookmarks][:tempfile])
+    content = params[:bookmarks][:tempfile].read
     file = File.new(File.join(File.dirname(__FILE__), 'bookmarks', "#{session['uuid']}.xml"), "w")
     file.write(content)
     file.close
