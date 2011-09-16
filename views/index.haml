@@ -1,15 +1,22 @@
-%p.alert-message.info
+%p.alert-message
   %strong Welcome!
   Follow the steps below to import your bookmarks:
 
 %div.well
   %h2 1) Authenticate with gimmebar:
-  %a{:href => "/gimmebar/auth"} Sign in
+  %form.form-stacked
+    %div.actions
+      %a{:href => "/gimmebar/auth", :class => "btn large success"} Sign in
 
 %div.well  
   %h2.disabled 2) Load your delicious bookmarks:
-  %form
-    %input{:type => "file"}
+  %form.form-stacked
+    %fieldset
+      %label Locate your XML file
+      %div.field
+        %input{:type => "file"}
+      %div.actions
+        %input{:type => "submit", :class => "btn info large", :value => "Upload!"}
 
 %div.well
   %h2.disabled 3) Select your import settings:
