@@ -19,7 +19,7 @@ class Gimmelicious < Sinatra::Base
       @unique_id = session['uuid']
       doc = Nokogiri::XML(File.open(File.join(File.dirname(__FILE__), 'bookmarks', "#{@unique_id}.xml")))
       @total_bookmarks = doc.xpath("*")[0].attributes['total'].value
-      @tags = list_tags doc
+      @tags = list_tags doc.xpath("//post")
     end
     haml :index
   end
@@ -35,9 +35,9 @@ class Gimmelicious < Sinatra::Base
 
   private
 
-    def list_tags(doc)
+    def list_tags(posts)
       tags = []
-      doc.xpath("//post").each do |post|
+      posts.each do |post|
         tag = post.attributes["tag"].value.split(' ')
         tag.each{ |t| tags.push(t) unless tags.include?(t) }
       end
