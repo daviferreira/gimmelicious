@@ -1,0 +1,25 @@
+%div.well  
+  %h2 2) Load your delicious bookmarks:
+
+  %div.alert-message.block-message.notice{:style => "margin-top:12px;"}
+    %p Don't know how to backup your delicious bookmarks?
+    %a{:href => "http://lifehacker.com/5136845/backup-delicious-bookmarks-from-the-shell", :target => "_blank"} Backup Delicious Bookmarks from the Shell
+
+  -unless @unique_id.nil?
+    %div.alert-message.block-message.success
+      %p
+        File successfully loaded. You have
+        %strong
+          =@total_bookmarks
+        bookmarks under
+        %strong
+          =@tags.length
+        tags.
+
+  %form.form-stacked{:method => "post", :action => "/upload", :enctype => "multipart/form-data"}
+    %fieldset
+      %label Locate your XML file:
+      %div.field
+        %input{:type => "file", :name => "bookmarks"}
+          %div.actions
+            %input{:type => "submit", :class => "btn info large", :value => "Upload!"}

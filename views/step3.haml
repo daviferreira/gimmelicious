@@ -1,0 +1,24 @@
+%div.well
+  %h2 3) Select your import settings:
+  %form.form-stacked
+    %div.clearfix
+      %label 
+        %div.input
+          %ul.inputs-list
+            %li
+              %label
+                %input{:type => "radio", :name => "settings", :value => 1}
+                  %span 
+                    Import everything to a 
+                  %strong Delicious collection
+            %li
+              %label
+                %input{:type => "radio", :name => "settings", :value => 1}
+                  %span Import everything to collections based on tags 
+            %li
+              %label
+                %input{:type => "radio", :name => "settings", :value => 1}
+                  %span Import everything to an existing collection 
+
+    %div.actions
+      %input{:type => "submit", :class => "btn primary large disabled", :value => "Import!", :disabled => "disabled"}
