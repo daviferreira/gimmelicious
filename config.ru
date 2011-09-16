@@ -1,0 +1,2 @@
+require "./gimmelicious"
+run Gimmelicious
